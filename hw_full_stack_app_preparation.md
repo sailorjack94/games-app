@@ -26,13 +26,35 @@ Draw a diagram showing the dataflow through the application starting with a form
 ### Questions
 
 1. What is responsible for defining the routes of the `games` resource?
+create_router.js is a constructor for our router. The routers are explicitly created in server.js.
+
+
 2. What do you notice about the folder structure?  Whats the client responsible for? Whats the server responsible for?
+Client is responsible for the front-end display of data and passing functions to the server. The server folder contains the seed data for our DB as well as routes and listeners.
+
+
 3. What are the the responsibilities of server.js?
+Server.js contains our ExpressJS server and 'listens' for calls on port 5000. If valid operations (defined in our client folder) are recieved then they are passed to the DB. It also creates the routes for our API.
+
+
 4. What are the responsibilities of the `gamesRouter`?
+
+
 5. What process does the the client (front-end) use to communicate with the server?
-6. What optional second argument does the `fetch` method take? And what is it used for in this application? Hint: See [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) on the MDN docs
+
+
+6. What optional second argument does the `fetch` method take? And what is it used for in this application? Hint: See [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) on the MDN docs.
+The second param contains the specifications of what we want to do to complete the update. It is used for PUT, DELETE etc.
+
+
 7. Which of the games API routes does the front-end application consume (i.e. make requests to)?
+All API interaction is through 'http://localhost:5000/api/games/'.
+
+
 8. What are we using the [MongoDB Driver](http://mongodb.github.io/node-mongodb-native/) for?
+The NodeJS MongoDB driver allows us to pass function to MongoDB and carry out operations on the database.
+
+
 
 ## Extension
 
